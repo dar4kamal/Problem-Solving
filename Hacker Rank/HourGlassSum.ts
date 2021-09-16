@@ -24,7 +24,7 @@ const getWindowValues = (
   return [a, b, c, d, e, f, g];
 };
 
-const hourglassSum = (arr: number[][]) => {
+function hourglassSum(arr: number[][]) {
   const sum: number[] = [];
 
   const length = arr[0].length - 2;
@@ -35,7 +35,7 @@ const hourglassSum = (arr: number[][]) => {
   }
 
   return Math.max(...sum);
-};
+}
 
 const test_hgs = [
   [-9, -9, -9, 1, 1, 1],
@@ -47,3 +47,7 @@ const test_hgs = [
 ];
 
 console.log(hourglassSum(test_hgs));
+
+// for solving typescript module error which about
+// duplicated variables' names across different files in the same directory.
+export {};
