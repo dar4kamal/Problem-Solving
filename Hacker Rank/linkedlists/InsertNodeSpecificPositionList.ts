@@ -1,50 +1,10 @@
 // src => https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem
 
-class SinglyLinkedListNode {
-  data: number;
-  next: SinglyLinkedListNode | null;
-
-  constructor(nodeData: number) {
-    this.data = nodeData;
-    this.next = null;
-  }
-}
-
-class SinglyLinkedList {
-  head: SinglyLinkedListNode | null;
-  tail: SinglyLinkedListNode | null;
-
-  constructor() {
-    this.head = null;
-    this.tail = null;
-  }
-
-  insertNode(nodeData: number): void {
-    const node = new SinglyLinkedListNode(nodeData);
-
-    if (this.head == null) {
-      this.head = node;
-    } else {
-      this.tail!.next = node;
-    }
-
-    this.tail = node;
-  }
-}
-
-function printSinglyLinkedList(
-  node: SinglyLinkedListNode | null,
-  sep: string
-): void {
-  while (node != null) {
-    console.log(String(node.data));
-    node = node.next;
-
-    if (node != null) {
-      console.log(sep);
-    }
-  }
-}
+import {
+  SinglyLinkedList,
+  SinglyLinkedListNode,
+  printSinglyLinkedList,
+} from "./Models/LinkedList";
 
 function insertNodeAtPosition(
   llist: SinglyLinkedListNode,
